@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>随意散列排放</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/lightbox.css" rel="stylesheet">
+<style>
+    *{margin:0px;padding:0px;}
+    .randon_position{width:1200px;height:500px;box-shadow: 0 0 10px #08e;margin:0px auto;position: relative;}
+        .randon_position a{display:block;width:250px;height:120px;box-shadow: 0 0 20px #000;position: absolute;}
+         .randon_position a img{display:block;width:100%;height:100%;}
+</style>
+
+</head>
+<body>
+dddddfdsfsd
+<div class="randon_position">
+    
+   <a class="example-image-link chang" data-lightbox="goup"  href="vidio-img15.jpg"> <img  src="vidio-img15.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="vidio-img2.jpg"> <img src="vidio-img15.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="xiaozhai02.jpg"><img src="vidio-img15.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="xiaozhai03.jpg"><img src="vidio-img2.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="vidio-img15.jpg"><img src="xiaozhai02.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="vidio-img10.jpg"><img src="xiaozhai03.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="vidio-img2.jpg"><img src="xiaozhai02.jpg" alt="" class="chang"></a>
+   <a class="example-image-link chang" data-lightbox="goup" href="xiaozhai03.jpg"> <img src="vidio-img10.jpg" alt="" class="chang"></a>
+   data-lightbox设置组   
+
+   
+
+   
+</div>
+
+<a class="example-image-link" data-lightbox="goup"  href="vidio-img15.jpg"><img src="vidio-img15.jpg"   alt=""></a>
+<a class="example-image-link" data-lightbox="goup" href="vidio-img2.jpg"><img src="vidio-img2.jpg"   alt=""></a>
+<a class="example-image-link" data-lightbox="goup"  href="xiaozhai02.jpg"><img src="xiaozhai02.jpg"   alt=""></a>
+<a class="example-image-link" data-lightbox="goup" href="xiaozhai03.jpg"><img src="xiaozhai03.jpg"  alt=""></a>
+<a class="example-image-link" data-lightbox="goup" href="vidio-img15.jpg"><img src="vidio-img15.jpg"  alt=""></a>
+<a  class="example-image-link" data-lightbox="goup" href="vidio-img10.jpg"><img src="vidio-img10.jpg" alt=""></a>
+
+<script>
+    
+ function RandomImg(father,ele){
+    this.father=document.getElementsByClassName(father)[0];
+    this.ele=document.getElementsByClassName(ele);
+ }
+
+ RandomImg.prototype.positionRandom=function(){
+    
+    for(var i=0;i< this.ele.length;i++){
+     
+         this.ele[i].style.left=Math.random()*(this.father.offsetWidth- this.ele[i].offsetWidth)+"px";
+         this.ele[i].style.top=Math.random()*(this.father.offsetHeight-120)+"px";
+     
+ }
+ return this;
+    }
+
+ RandomImg.prototype.setRotate=function(){
+    for(var i=0;i<this.ele.length;i++){
+       this.ele[i].style.transform="rotate("+(-50+Math.random()*100)+"deg)";
+        this.ele[i].style.index=Math.random()*100;
+    }
+return this;
+ }
+
+
+    var rImg=new RandomImg("randon_position","chang");
+        rImg.positionRandom().setRotate();
+
+
+
+
+</script>
+<script src="js/lightbox-plus-jquery.min.js"></script>
+  使用lightbox.min.js，确信JQuery库已经引入并被加载
+   如果使用的是lightbox-plus-jquery.min.js，则可以不引入JQuery库
+
+    
+</body>
+</html>
